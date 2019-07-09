@@ -4,8 +4,12 @@ function multiply(val1,val2) {
 
 multiply(2,4);
 
+console.log(multiply (2,4));
+
 function puttogether(firststring,secondstring) {
-	return (firststring+secondstring);
+	return (firststring+" "+secondstring);
 }
 
-puttogether ("hello"," hi");
+puttogether ("a","b");
+
+console.log (puttogether ("a","b"));
