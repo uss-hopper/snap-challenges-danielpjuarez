@@ -9,6 +9,8 @@
 	</head>
 	<body>
 	<h1>Part 2</h1>
+	<p>As a registered user, I can add multiple shipping addresses to my profile.</p>
+	<img src="snap711p2.svg" alt="ERD" title="ERD">
 	<a href="part2.php"> Back to Part 1</a>
 	</body>
 </html>
