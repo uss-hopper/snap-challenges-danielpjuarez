@@ -2,6 +2,7 @@
  *given weightLb set wegithgram to weightLbs/2.2046
  *@param mass Te weight or mass to be converted
  * @param units The abbreviation for the units specified in the mass
+ * @return converted mass in grams
  */
 
 function converttograms (mass, units) {
