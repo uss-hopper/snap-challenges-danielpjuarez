@@ -4,10 +4,10 @@
  */
 
 function sumUniquePositiveFactors (number) {
-	//make sure to define sum as some reasonable value so that there can be an
+	//make sure to define sum as some reasonable value so that there can be an consistent starting point
 	let sum = 0;
 	//we are surrounding this with a for loop
-	for(i = 1; i <= number; i++) {
+	for(i = 1; i<=number; i++) {
 		//% sign is modulo, must be equal to 0 when a number is divided by a factor
 		if(number % i === 0) {
 			sum = sum + 1;
@@ -16,4 +16,4 @@ function sumUniquePositiveFactors (number) {
 	}
 	return sum;
 }
-console.log(sumUniquePositiveFactors(18));
+console.log (sumUniquePositiveFactors(18));
