@@ -13,9 +13,7 @@ class DispatchTimes {
 	//id of initial dispatch
 	private $callDispatchTime;
 	//id of time of arrival on scene
-	private $callOnSceneTime;
-	//id of time clearing from scene, call is over
-	private $callCompletionTime;
+
 	/**
 	 * constructor for this DispatchTime
 	 * @param string $newCallId id of this call or null if new call
@@ -31,8 +29,6 @@ class DispatchTimes {
 		try {
 			$this->setCallId($newCallId);
 			$this->setCallDispatchTime($newCallDispatchTime);
-			$this->setCallOnSceneTime($newCallOnSceneTime);
-			$this->setCallCompletionTime($newCallCompletionTime);
 		}
 		//determines what exception type is thrown
 		catch(\InvalidArgumentException|\RangeException|\Exception|\TypeError $exception){
@@ -51,9 +47,36 @@ class DispatchTimes {
 	 * mutator method for call id
 	 * @param string $newCallId new value of call Id
 	 */
-	public function setCallId (
-		if is_string($newCallId)
+	public function setCallId ($newCallId)
+	{
+		$this->callId($newCallId);
 	}
+	/**
+	 * accessor method for callDispatchTime
+	 * @return \DateTime value of call dispatch time
+	 */
+
+	public function getCallDispatchTime() :git \DateTime {
+		return ($this->callDispatchTime);
+	}
+
+	/**
+	 * mutator method for call dispatch time
+	 *ran out of time to insert validators in the mutator. this was only a one hour challenge
+	 */
+	public function setCallDispatchTime($newCallDispatchTime=null): void {
+		//base case if the date is null use current date and time
+		if ($newCallDispatchTime===null) {
+			$this->callDispatchTime=new \DateTime();
+			return;
+		}
+
+		$this->callDispatchTime=$newCallDispatchTime;
+	}
+
+
+
+
 
 
 }
