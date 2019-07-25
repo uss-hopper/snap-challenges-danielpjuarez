@@ -12,7 +12,6 @@ class DispatchTimes {
 	private $callId;
 	//id of initial dispatch
 	private $callDispatchTime;
-	//id of time of arrival on scene
 
 	/**
 	 * constructor for this DispatchTime
@@ -25,30 +24,23 @@ class DispatchTimes {
 	 * @throws \TypeError if data types violate type hints
 	 * @throws \Exception if some other exception occurs
 	 */
-	public function __construct($newCallId, $newCallDispatchTime=null, $newCallOnSceneTime=null, $newCallCompletionTime=null) {
-		try {
-			$this->setCallId($newCallId);
-			$this->setCallDispatchTime($newCallDispatchTime);
+	public function __construct(int $newCallId, time $newCallDispatchTime=null) {
+		$this->setCallId($newCallId);
+		$this->setCallDispatchTime($newCallDispatchTime);
 		}
-		//determines what exception type is thrown
-		catch(\InvalidArgumentException|\RangeException|\Exception|\TypeError $exception){
-			$exceptionType=get_class($exception);
-			throw (new $exceptionType($exception->getMessage(),0,$exception));
-		}
-	}
 	/**
 	 * accessor method for call Id
 	 *@return value of call Id
 	 */
-	public function getCallId() {
+	public function getCallId():int {
 		return($this->callId);
 	}
 	/**
 	 * mutator method for call id
-	 * @param string $newCallId new value of call Id
+	 * @param integer $newCallId new value of call Id
 	 */
-	public function setCallId ($newCallId)
-	{
+	public function setCallId (int $newCallId) :void
+	{ return
 		$this->callId($newCallId);
 	}
 	/**
@@ -56,7 +48,7 @@ class DispatchTimes {
 	 * @return \DateTime value of call dispatch time
 	 */
 
-	public function getCallDispatchTime() :git \DateTime {
+	public function getCallDispatchTime() :DateTime {
 		return ($this->callDispatchTime);
 	}
 
@@ -73,10 +65,10 @@ class DispatchTimes {
 
 		$this->callDispatchTime=$newCallDispatchTime;
 	}
-
-
-
-
-
+	public function appendDispatchTimeToCallId ():void {
+		echo ($this->callId. $this->callDispatchTime);
+	}
 
 }
+$dispatchTimes new dispatchtimes(8421,'2020-01-28T15:00:00-07:00');
+$appendDispatchTimeToCallId ();

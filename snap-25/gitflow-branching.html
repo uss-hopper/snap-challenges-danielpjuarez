@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Git Flow Branching</title>
+	</head>
+	<body>
+<!--		1. In an html document, identify and describe the 5 types of branches that are part of Git Flow.-->
+<!--		Describe how the work for one ticket would move through the various branches, and when those branches would be merged.-->
+<!--		2.On many projects, developers use small snippets of code called patch files. These files outline small-->
+<!--		differences  between one version of a file and another version. Create a text file, then, using git, create a-->
+<!--		patch file that adds the phrase "I'm getting the hang of this git stuff." to a file in your snap challenge  by-->
+<!--		running git apply my-patch.patch. Hint: You should not actually commit the writing you are adding with-->
+<!--		my-patch.patch or the patch will fail!-->
+		<h3>Git Flow</h3>
+		<p>
+			The main branch in Git Flow is called the master branch (1). It is the highest level branch and should never be
+			modified directly except by "hotfix" branches (2) which should only be used to make emergency fixes to major
+			problems with the code. The master branch should otherwise only be modified through merges from "release"
+			branches (3), which sit one level below the master branch. Release branches are major modifications to code,
+			not meant to be modified directly (except through merges with the "develop" branches, see below), and consist
+			of all new code added during a sprint. Develop branches 4) are a level below release branches, and consist
+			of all work merged from the lowest branch levels in Git Flow, "feature" branches (5). Develop branches are not
+			ready to be made into a release branch, and are still actively having feature branches added into them. The
+			feature branches are ticket-sized task branches that are subsequently merged into the develop branch when
+			they are complete. By having multiple feature branches broken off from the develop branch you can have
+			yourcdcdteam work on many tickets at a time without potentially disrupting upstream branches.
+		</p>
+	</body>
+</html>
