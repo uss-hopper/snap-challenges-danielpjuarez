@@ -17,14 +17,16 @@
 			The main branch in Git Flow is called the master branch (1). It is the highest level branch and should never be
 			modified directly except by "hotfix" branches (2) which should only be used to make emergency fixes to major
 			problems with the code. The master branch should otherwise only be modified through merges from "release"
-			branches (3), which sit one level below the master branch. Release branches are major modifications to code,
-			not meant to be modified directly (except through merges with the "develop" branches, see below), and consist
+			branches (3), which sit one level above the develop branch, waiting for deployment to the master branch.
+			Release branches are
+			major modifications to code, not meant to be modified directly (except through merges with the "develop"
+			branches, see below), and consist
 			of all new code added during a sprint. Develop branches 4) are a level below release branches, and consist
 			of all work merged from the lowest branch levels in Git Flow, "feature" branches (5). Develop branches are not
 			ready to be made into a release branch, and are still actively having feature branches added into them. The
 			feature branches are ticket-sized task branches that are subsequently merged into the develop branch when
 			they are complete. By having multiple feature branches broken off from the develop branch you can have
-			yourcdcdteam work on many tickets at a time without potentially disrupting upstream branches.
+			your team work on many tickets at a time without potentially disrupting upstream branches.
 		</p>
 	</body>
 </html>
