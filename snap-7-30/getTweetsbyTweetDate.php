@@ -14,6 +14,36 @@ Message #web-captains-log
  * @param string $tweetContent tweet content to search for
 *@return \SplFixedArray SplFixedArray of Tweets found
 *@throws \PDOexception when mySQL related error occur
-*@throws \TypeError when variables are not the correct data type
+*@throws \TypeError when variables are not the correct data
+ * @throws \RangeException if TweetDate is a date that does not exist
+ * @throws \InvalidArgumentException if TweetDate is not a valid object or string
 */
 
+public static function getTweetbyTweetDate (\PDO $pdo, $tweetDate): ?Tweet {
+	//sanitize tweetDate before searching
+	try {
+		$tweetDate= self::validatedatetime($tweetDate);
+	} catch (\RangeException|\InvalidArgumentException|\Exception|\TypeError $exception) {
+		throw (new \PDOException ($exception->getMessage(),0,$exception));
+	}
+}
+
+//create query template
+$query = "Select tweetId, tweetProfileId, tweetContent, tweetDate from tweet where tweetDate= :tweetDate";
+$statement=$pdo->prepare(query);
+
+//bind the Tweet Date to the placeholder in the template
+$parameters =["tweetDate"=>$tweetDate->getBytes()];
+$statement->execute($parameters);
+//build an array of tweets
+$tweets= new \SplFixedArray($statement->rowCount ());
+$statement->setFetchMode (\PDO::FETCH_ASSOC);
+while(($row=$statement->fetch()!==false))
+	try {
+		$tweet=new Tweet($row["tweetId"], $row[tweetProfileId], $row["tweetContent"], $row["tweetDate"]);
+		$tweets [$tweets->key()]=$tweet;
+	} catch (\Exception $exception) {
+		//if the row couldn't be converted, rethrow it
+		throw (new \PDOException($exception->getMessage(),0,$exception));
+	}
+	return ($tweets);
