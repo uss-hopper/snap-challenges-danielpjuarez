@@ -10,7 +10,8 @@ Message #web-captains-log
 
 /**
 *gets Tweets by TweetDate
- *
+ * This also requires the rest of the getters and setters, and private variables to be set in order to function
+ * correctly
  * @param string $tweetContent tweet content to search for
 *@return \SplFixedArray SplFixedArray of Tweets found
 *@throws \PDOexception when mySQL related error occur
