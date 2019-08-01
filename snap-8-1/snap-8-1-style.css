@@ -19,4 +19,13 @@ li {
 	height:150px;
 	padding: 5px;
 	margin-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+/*puts all elements in one line if screen is wide enough, shifts them to
+ further lines if it is not.*/
+.my-list {
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
