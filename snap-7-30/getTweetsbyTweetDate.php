@@ -9,7 +9,7 @@ Message #web-captains-log
 
 
 /**
-*gets Tweets by TweetDate
+*gets Tweets by TweetDate from a given date
  * This also requires the rest of the getters and setters, and private variables to be set in order to function
  * correctly
  * @param string $tweetContent tweet content to search for
@@ -20,10 +20,10 @@ Message #web-captains-log
  * @throws \InvalidArgumentException if TweetDate is not a valid object or string
 */
 
-public static function getTweetbyTweetDate (\PDO $pdo, $tweetDate): ?Tweet {
+public static function getTweetbyTweetDate (\PDO $pdo, DateTime $tweetDate): \SplFIxedArry {
 	//sanitize tweetDate before searching
 	try {
-		$tweetDate= self::validatedatetime($tweetDate);
+		$tweetDate= self::validatedate($tweetDate);
 	} catch (\RangeException|\InvalidArgumentException|\Exception|\TypeError $exception) {
 		throw (new \PDOException ($exception->getMessage(),0,$exception));
 	}
