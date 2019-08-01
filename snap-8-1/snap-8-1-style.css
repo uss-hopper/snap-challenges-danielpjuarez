@@ -1,31 +1,21 @@
-ul {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-}
-
-li {
+.my-item {
+	width:200px;
+	height:150px;
+	padding: 5px;
+	margin-top: 10px;
 	background: tomato;
-
 	line-height: 150px;
 	color: white;
 	font-weight: bold;
 	font-size: 3em;
 	text-align: center;
 }
-
-.my-item {
-	width:200px;
-	height:150px;
-	padding: 5px;
-	margin-top: 10px;
-	display: flex;
-	flex-wrap: wrap;
-}
-/*puts all elements in one line if screen is wide enough, shifts them to
- further lines if it is not.*/
+/*puts all elements in one line if screen is wide enough, shifts them to further lines if it is not.*/
 .my-list {
-	display: inline-flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: flex;
+	flex-flow: wrap;
+	justify-content: space-around;
 }
