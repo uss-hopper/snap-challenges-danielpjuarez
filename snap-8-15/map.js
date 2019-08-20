@@ -1,4 +1,5 @@
-let contactsArray= [
+//use const instead of let to make clear that the variable shouldn't be modified
+const contactsArray= [
 	{
 		"id": 1,
 		"name": "Leanne Graham",
@@ -231,12 +232,25 @@ let contactsArray= [
 	}
 ];
 
-let newMap= new Map([contactsArray]);
-//
-//  function getCompany(){
-// 	 newMap.get("company")
-// }
-//
-// console.log (getCompany);
+/* console.log(contactsArray);
 
-console.log(Array.from(newMap));
+let updatedContacts= contactsArray.map(
+	(object)=> {
+		//choose company because that's what it's called in the array
+		delete object.company;
+		return object
+	}
+);
+console.log(updatedContacts);
+*/
+
+
+//another method that lets you retain the company in case you need it later, but delete its values
+let updatedContacts2=contactsArray.map(
+	(user)=> {
+		user.company = undefined;
+		return user;
+	}
+);
+
+console.log(updatedContacts2);
