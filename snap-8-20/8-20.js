@@ -4,9 +4,16 @@ let nonSenseStarTrekBabbleArray = nonsenseStarTrekBabble.split(" ");
 
 // console.log(nonSenseStarTrekBabbleArray);
 
-let startsWithE = nonSenseStarTrekBabbleArray.filter((nonsenseStarTrek) => nonsenseStarTrek.startsWith("e"));
+let startsWithE = nonSenseStarTrekBabbleArray.filter((nonsenseStarTrek) => nonsenseStarTrek.startsWith("E"||"e"));
 
 console.log(startsWithE);
+
+// alternate way that is actually complete
+
+let newNonsenseStarTrek = nonsenseStarTrekBabble.split(' ');
+let filteredNonsenseStarTrek = newNonsenseStarTrek.filter(word => !(word[0].toLowerCase()=='e'))
+let words = filteredNonsenseStarTrek.join (' ');
+console.log(words);
 
 
 
