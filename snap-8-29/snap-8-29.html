@@ -6,29 +6,32 @@
 	</head>
 	<body>
 <!--		Snap Challenge: Interview Questions #2-->
-<!--		In pseudocode, write a function that takes a string and returns it with all vowels (not including y) removed.-->
+<!--		In pseudocode, write a function that takes a string and returns it with all vowels (not including y) removed. fixed in class-->
 			<p>
 				Set string to var
-				function remVow =
-					forEach i=0, i++, i<=string.length
-						if i ==! (a, e, i, o, u)
-						return i
+				function remVow {
+					vowels = ['a', 'e', 'i', 'o', 'u']
+					foreach (character in string) {
+						if character is not in vowels {
+							noVowels= noVowels + character;
+								}}
+
+				return noVowels}
 
 
 
-<!--		In pseudocode, write a function that takes an array of numbers and returns the greatest number in the array.-->
-			sort array lowest-highest
-			return final value of arrayNum
 
-			OR
-			max = array [0]
-			for i=0, i++, i is less than arraylength
-				if i is greater than max
-				set i=max
-<!--		In pseudocode, write a function that computes the first 100 numbers in the Fibonacci sequence. The Fibonacci sequence is created by adding the two previous numbers in the sequence together, and starts 1, 1, 2, 3, 5, 8...-->
-			foreach i=0, i++, i<100
-			value i = value (i-1) + value (i-2)=
-			print i
+<!--		In pseudocode, write a function that takes an array of numbers and returns the greatest number in the array. fixed in class-->
+			function greatestNum [array myNumbers] {
+				previous number = null;
+					for (i=0, i less than myNumbers.length, i++) {
+						currentvalue = myNumbers[i];
+						if (i>previous number, store i in current value),
+<!--		In pseudocode, write a function that computes the first 100 numbers in the Fibonacci sequence. The Fibonacci sequence is created by adding the two previous numbers in the sequence together, and starts 1, 1, 2, 3, 5, 8... fixed in class-->
+			function f100 () {
+				array fibonacci = [1, 1]
+					for i=2, (i<=100, i++)
+						fibonacci [i] = fibonacci [i-1] fibonacci [i-2] 
 			</p>
 
 
